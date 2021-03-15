@@ -22,7 +22,9 @@ find_package(NGL CONFIG REQUIRED)
 # Instruct CMake to run moc automatically when needed (Qt projects only)
 set(CMAKE_AUTOMOC ON)
 # find Qt libs
-find_package(Qt5Widgets)
+find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
+include_directories(${Qt5Widgets_INCLUDE_DIRS})
+add_definitions(${Qt5Widgets_DEFINITIONS})
 # use C++ 17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -38,10 +40,10 @@ target_sources(${TargetName} PRIVATE ${PROJECT_SOURCE_DIR}/src/main.cpp
 			${PROJECT_SOURCE_DIR}/include/NGLScene.h  
 )
 
-target_link_libraries(${TargetName} PRIVATE  NGL)
+target_link_libraries(${TargetName} PRIVATE  NGL Qt5::Widgets)
 
-#add_custom_target(${TargetName}CopyShaders ALL
-#    COMMAND ${CMAKE_COMMAND} -E copy_directory
-#    ${CMAKE_CURRENT_SOURCE_DIR}/shaders
-#    $<TARGET_FILE_DIR:${TargetName}>/shaders
-#)
+add_custom_target(${TargetName}CopyShaders ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_CURRENT_SOURCE_DIR}/shaders
+    $<TARGET_FILE_DIR:${TargetName}>/shaders
+)
