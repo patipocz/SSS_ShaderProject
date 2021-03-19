@@ -72,8 +72,9 @@ void NGLScene::initializeGL()
   ngl::ShaderLib::linkProgramObject("PerVertDiffuse");
   // and make it active ready to load values
   ngl::ShaderLib::use("PerVertDiffuse");
-  ngl::ShaderLib::setUniform("Kd",0.8f,0.3f,0.1f);
-  ngl::ShaderLib::setUniform("Ld",1.0f,1.0f,1.0f);
+  ngl::ShaderLib::setUniform("diffuse", 0.1f, 0.7f, 0.5f, 1.0f);
+  ngl::ShaderLib::setUniform("light.diffuse", 1.0f, 0.8f, 0.5f, 1.0f);
+  ngl::ShaderLib::setUniform("light.position", 0.0f, 2.0f, 1.0f);
   // Now we will create a basic Camera from the graphics library
   // This is a static camera so it only needs to be set once
   // First create Values for the camera position
