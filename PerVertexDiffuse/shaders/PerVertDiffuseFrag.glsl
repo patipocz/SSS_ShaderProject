@@ -14,7 +14,7 @@ struct Light
 
 uniform Light light;
 
-uniform vec4 diffuse;
+uniform vec4 diffuseColour;
 
 uniform float wrap;
 uniform float scatterWidth;
@@ -62,7 +62,7 @@ void main () {
     //vec4 light = tex2D(skinLUT, s * 0.5 + 0.5);
     //return diffuseColor * light.rgb + specularColour * light.a;
 
-    fragColour = diffuse + scatter * scatterColour;
+    fragColour = diffuseColour + diffuse + scatter * scatterColour;
 
     
 

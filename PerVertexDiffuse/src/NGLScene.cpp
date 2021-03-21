@@ -72,9 +72,9 @@ void NGLScene::initializeGL()
   ngl::ShaderLib::linkProgramObject("PerVertDiffuse");
   // and make it active ready to load values
   ngl::ShaderLib::use("PerVertDiffuse");
-  ngl::ShaderLib::setUniform("diffuse", 0.1f, 0.7f, 0.5f, 1.0f);
+  ngl::ShaderLib::setUniform("diffuseColour", 0.1f, 0.7f, 0.5f, 1.0f);
   ngl::ShaderLib::setUniform("light.diffuse", 1.0f, 0.8f, 0.5f, 1.0f);
-  ngl::ShaderLib::setUniform("light.position", 0.0f, 2.0f, 1.0f);
+  ngl::ShaderLib::setUniform("light.position", -4.0f, 2.0f, 1.0f);
 
   ngl::ShaderLib::setUniform("wrap", 0.2f);
   ngl::ShaderLib::setUniform("scatterWidth", 0.3f);
