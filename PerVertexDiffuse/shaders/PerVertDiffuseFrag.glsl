@@ -62,7 +62,7 @@ void main () {
     //vec4 light = tex2D(skinLUT, s * 0.5 + 0.5);
     //return diffuseColor * light.rgb + specularColour * light.a;
 
-    fragColour = diffuseColour + diffuse + scatter * scatterColour;
+    fragColour = diffuseColour * (diffuse + scatter * scatterColour);
 
     
 

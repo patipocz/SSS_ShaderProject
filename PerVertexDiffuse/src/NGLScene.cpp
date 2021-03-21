@@ -78,7 +78,7 @@ void NGLScene::initializeGL()
 
   ngl::ShaderLib::setUniform("wrap", 0.2f);
   ngl::ShaderLib::setUniform("scatterWidth", 0.3f);
-  ngl::ShaderLib::setUniform("scatterColour", 0.15f, 0.0f, 0.0f, 1.0f);
+  ngl::ShaderLib::setUniform("scatterColour", 0.4f, 0.2f, 0.9f, 0.9f);
   ngl::ShaderLib::setUniform("shininess", 40.0f);
 
   // Now we will create a basic Camera from the graphics library
